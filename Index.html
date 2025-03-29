@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pytagoras Læremester</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Pytagoras' Læremester</h1>
+        <p>Utforsk rettvinklede trekanter og Pytagoras' setning!</p>
+    </header>
+
+    <main>
+        <section id="intro">
+            <h2>Hva er Pytagoras' setning?</h2>
+            <p>I en rettvinklet trekant er summen av kvadratene av katetenes lengder lik kvadratet av hypotenusens lengde.</p>
+            <div class="formula">a² + b² = c²</div>
+            <div class="triangle-labels">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Pythagorean.svg/300px-Pythagorean.svg.png" alt="Rettvinklet trekant med sider a, b, c" class="triangle-img">
+                <p><strong>a</strong> og <strong>b</strong> er kateter (de korte sidene ved den rette vinkelen).</p>
+                <p><strong>c</strong> er hypotenusen (den lengste siden, motsatt av den rette vinkelen).</p>
+            </div>
+        </section>
+
+        <section id="solver">
+            <h2>Løs Pytagoras-ligningen</h2>
+            <form id="pythagoras-form">
+                <div class="input-group">
+                    <label for="unknown">Hvilken side er ukjent?</label>
+                    <select id="unknown" name="unknown">
+                        <option value="c" selected>Hypotenus (c)</option>
+                        <option value="a">Katet (a)</option>
+                        <option value="b">Katet (b)</option>
+                    </select>
+                </div>
+
+                <div class="input-group" id="group-a">
+                    <label for="side-a">Lengde på katet a:</label>
+                    <input type="number" id="side-a" name="side-a" step="any" placeholder="f.eks. 3">
+                </div>
+
+                <div class="input-group" id="group-b">
+                    <label for="side-b">Lengde på katet b:</label>
+                    <input type="number" id="side-b" name="side-b" step="any" placeholder="f.eks. 4">
+                </div>
+
+                <div class="input-group" id="group-c" style="display: none;">
+                    <label for="side-c">Lengde på hypotenus c:</label>
+                    <input type="number" id="side-c" name="side-c" step="any" placeholder="f.eks. 5">
+                </div>
+
+                <button type="submit">Beregn!</button>
+            </form>
+
+            <div id="solution">
+                <h3>Steg-for-steg løsning:</h3>
+                <pre id="steps"></pre>
+                <p id="final-answer"></p>
+            </div>
+        </section>
+
+        <section id="special-cases">
+            <h2>Spesielle Rettvinklede Trekanter</h2>
+
+            <article class="special-case">
+                <h3>30-60-90 Trekanter</h3>
+                <p>Disse trekantene har vinkler på 30°, 60° og 90°. Forholdet mellom sidene er alltid det samme:</p>
+                <ul>
+                    <li>Den korteste kateten (motsatt 30°-vinkelen) er <strong>x</strong>.</li>
+                    <li>Den lengste kateten (motsatt 60°-vinkelen) er <strong>x√3</strong>.</li>
+                    <li>Hypotenusen (motsatt 90°-vinkelen) er <strong>2x</strong>.</li>
+                </ul>
+                <p>Kjenner du én side, kan du finne de to andre!</p>
+                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/30-60-90_triangle.svg/200px-30-60-90_triangle.svg.png" alt="30-60-90 trekant" class="triangle-img">
+            </article>
+
+            <article class="special-case">
+                <h3>Likebeinte Rettvinklede Trekanter (45-45-90)</h3>
+                <p>Disse trekantene har vinkler på 45°, 45° og 90°. De to katetene er like lange.</p>
+                <ul>
+                    <li>Katetene er <strong>x</strong>.</li>
+                    <li>Hypotenusen er <strong>x√2</strong>.</li>
+                </ul>
+                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/45-45-90_triangle.svg/200px-45-45-90_triangle.svg.png" alt="45-45-90 trekant" class="triangle-img">
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>Laget med AI - Forståelse gjennom interaksjon.</p>
+         <p>Dagens dato: <span id="current-date"></span></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
