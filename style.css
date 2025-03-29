@@ -1,0 +1,240 @@
+/* Generelt og Grunnleggende Stil */
+:root {
+    --primary-color: #4a00e0; /* Lilla */
+    --secondary-color: #8e2de2; /* Lysere lilla */
+    --accent-color: #ff6b6b; /* Korall/Rød */
+    --background-color: #f4f4f9;
+    --text-color: #333;
+    --card-bg: #ffffff;
+    --border-radius: 10px;
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-weight: 700;
+}
+
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    display: grid;
+    gap: 2rem;
+}
+
+section, article.special-case {
+    background-color: var(--card-bg);
+    padding: 1.5rem 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+h2, h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    font-weight: 600;
+}
+
+/* Introduksjonsseksjon */
+#intro .formula {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--secondary-color);
+    text-align: center;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    background-color: #e9e0f9;
+    border-radius: 5px;
+}
+.triangle-labels {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap; /* For mindre skjermer */
+}
+.triangle-img {
+    max-width: 150px; /* Juster etter behov */
+    height: auto;
+    margin-right: 1rem;
+}
+
+
+/* Løsningsseksjon */
+#pythagoras-form {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column; /* Stabler label over input */
+}
+
+label {
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+input[type="number"], select {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input[type="number"]:focus, select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(74, 0, 224, 0.3);
+}
+
+button[type="submit"] {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    padding: 0.9rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-top: 0.5rem; /* Litt luft over knappen */
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+button[type="submit"]:active {
+     transform: translateY(0);
+     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#solution {
+    margin-top: 1.5rem;
+    background-color: #f0f0f7; /* Litt annen bakgrunn for løsning */
+    padding: 1rem;
+    border-radius: 5px;
+    border-left: 5px solid var(--accent-color);
+}
+
+#solution h3 {
+    margin-top: 0;
+    color: var(--accent-color);
+}
+
+#steps {
+    font-family: 'Courier New', Courier, monospace;
+    white-space: pre-wrap; /* Viktig for linjeskift og mellomrom */
+    word-wrap: break-word;
+    background-color: #e9e0f9; /* Lys lilla bakgrunn */
+    padding: 1rem;
+    border-radius: 5px;
+    color: #333; /* Mørkere tekst for lesbarhet */
+    line-height: 1.7; /* Bedre linjeavstand for ligninger */
+    border: 1px solid #ccc;
+}
+
+#final-answer {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: var(--primary-color);
+    margin-top: 1rem;
+    text-align: center;
+}
+
+/* Spesialtilfeller */
+#special-cases {
+    background: none; /* Fjerner hovedbakgrunn for denne seksjonen */
+    box-shadow: none;
+    padding: 0;
+}
+.special-case {
+    background-color: var(--card-bg);
+    margin-bottom: 1.5rem; /* Avstand mellom boksene */
+    padding: 1.5rem 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.special-case h3 {
+     color: var(--secondary-color);
+}
+
+.special-case ul {
+    list-style: none; /* Fjerner kulepunkter */
+    padding-left: 0;
+}
+
+.special-case li {
+    padding: 0.3rem 0;
+    border-left: 3px solid var(--accent-color);
+    padding-left: 10px;
+    margin-bottom: 5px;
+    background-color: #fdf5f5; /* Svært lys rød */
+    border-radius: 3px;
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 1rem;
+    font-size: 0.9em;
+    color: #777;
+}
+
+/* Responsivt Design */
+@media (max-width: 768px) {
+    main {
+        padding: 0 0.5rem;
+    }
+    section, article.special-case {
+        padding: 1rem 1.2rem;
+    }
+    header {
+        padding: 1.5rem 0.5rem;
+    }
+    .triangle-labels {
+        flex-direction: column; /* Stabler bilde og tekst vertikalt */
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 15px; /* Juster grunnleggende fontstørrelse */
+    }
+    header h1 {
+        font-size: 1.8em;
+    }
+    h2 {
+        font-size: 1.4em;
+    }
+    input[type="number"], select, button[type="submit"] {
+        font-size: 0.95rem;
+    }
+}
